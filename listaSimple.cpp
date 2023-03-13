@@ -240,3 +240,23 @@ void listaSimple::desplegarLista()
 
 	}
 }
+
+void listaSimple::eliminarRepetidos()
+{
+		nodoS* aux = getCab();
+		while (aux != NULL) {
+			nodoS* nodoTemporal = aux;
+			while (nodoTemporal->getSgte() != NULL) {
+				if (nodoTemporal->getSgte()->getDato() == aux->getDato()) {
+					nodoS* nodoDlt = nodoTemporal->getSgte();
+					nodoTemporal->setSgte(nodoTemporal->getSgte()->getSgte());
+					setLargo(getLargo() - 1);
+					delete nodoDlt;
+				}else {
+					nodoTemporal = nodoTemporal->getSgte();
+				}
+			}
+			aux = aux->getSgte();
+		}
+		std::cout << "Se han eliminado los datos repetidos correctamente \n";
+}

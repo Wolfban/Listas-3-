@@ -38,6 +38,7 @@ public:
 	bool eliminar(int);
 	void eliminarLista();
 	void desplegarLista();
+	void eliminarRepetidos();
 
 
 };

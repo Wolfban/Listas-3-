@@ -23,6 +23,7 @@ void menu() {
         cout << "(4) Agregar despues de...  " << endl;
         cout << "(5) Remover todos los nodos de la lista" << endl;
         cout << "(7) Remover un dato de la lista" << endl;
+        cout << "(8) Eliminar datos repetidos" << endl;
         cout << "(10) Desplegar la lista" << endl;
         cout << "(0) Finalizar" << endl;
         cout << "Opcion seleccionada ->";
@@ -83,6 +84,11 @@ void menu() {
             else
                 cout << "El numero " << dato << " no está en la lista" << endl;
 
+            break;
+        }
+        case 8: {
+            cout << "Se estan borrando los datos \n";
+            lista->eliminarRepetidos();
             break;
         }
         case 10:
