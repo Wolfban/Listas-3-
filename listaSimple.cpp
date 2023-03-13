@@ -209,6 +209,23 @@ bool listaSimple::eliminar(int _dato)
 	return removido;
 }
 
+void listaSimple::eliminarLista()
+{
+	if (esVacia())
+		std::cout << "La lista esta vacia...";
+	else {
+		nodoS* aux = getCab();
+		nodoS* sig;
+		while (aux != nullptr) {
+			sig = aux->getSgte();
+			delete aux;
+			aux = sig;
+		}
+		setCab(nullptr);
+		std::cout << "Nodos eliminados!";
+	}
+}
+
 void listaSimple::desplegarLista()
 {
 	if (esVacia())

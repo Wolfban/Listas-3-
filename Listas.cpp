@@ -21,6 +21,7 @@ void menu() {
         cout << "(2) Agregar al final " << endl;
         cout << "(3) Agregar antes de...  " << endl;
         cout << "(4) Agregar despues de...  " << endl;
+        cout << "(5) Remover todos los nodos de la lista" << endl;
         cout << "(7) Remover un dato de la lista" << endl;
         cout << "(10) Desplegar la lista" << endl;
         cout << "(0) Finalizar" << endl;
@@ -64,6 +65,12 @@ void menu() {
                 cout << "Agregado correctamente" << endl;
             else
                 cout << "No se pudo agregar" << endl;
+            break;
+        }
+
+        case 5: {
+            cout << "Eliminado los nodos de la lista:" << endl;
+            lista->eliminarLista();
             break;
         }
         

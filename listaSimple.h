@@ -36,7 +36,7 @@ public:
 	bool agregarDespuesDe(int, int);
 
 	bool eliminar(int);
-
+	void eliminarLista();
 	void desplegarLista();
 
 
