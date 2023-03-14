@@ -22,6 +22,7 @@ void menu() {
         cout << "(3) Agregar antes de...  " << endl;
         cout << "(4) Agregar despues de...  " << endl;
         cout << "(5) Remover todos los nodos de la lista" << endl;
+        cout << "(6) Remover todos datos elegidos" << endl;
         cout << "(7) Remover un dato de la lista" << endl;
         cout << "(8) Eliminar datos repetidos" << endl;
         cout << "(10) Desplegar la lista" << endl;
@@ -72,6 +73,15 @@ void menu() {
         case 5: {
             cout << "Eliminado los nodos de la lista:" << endl;
             lista->eliminarLista();
+            break;
+        }
+        case 6: {
+            cout << "Elije el dato por eliminar. \n";
+            cin >> dato;
+            if(lista->eliminarTodos(dato))
+                cout << "El numero " << dato << " ha sido eliminado exitosamente" << endl;
+            else
+                cout << "El numero " << dato << " no esta en la lista" << endl;
             break;
         }
         

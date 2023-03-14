@@ -178,6 +178,8 @@ bool listaSimple::agregarAntesDe(int _dato, int _ref)
 
 	}
 
+	
+
 
 bool listaSimple::eliminar(int _dato)
 { //Eliminar el primer nodo cuyo valor sea igual a _dato
@@ -244,12 +246,19 @@ void listaSimple::desplegarLista()
 void listaSimple::eliminarRepetidos()
 {
 		nodoS* aux = getCab();
+
 		while (aux != NULL) {
+
 			nodoS* nodoTemporal = aux;
+
 			while (nodoTemporal->getSgte() != NULL) {
+
 				if (nodoTemporal->getSgte()->getDato() == aux->getDato()) {
+
 					nodoS* nodoDlt = nodoTemporal->getSgte();
+
 					nodoTemporal->setSgte(nodoTemporal->getSgte()->getSgte());
+
 					setLargo(getLargo() - 1);
 					delete nodoDlt;
 				}else {
@@ -260,3 +269,36 @@ void listaSimple::eliminarRepetidos()
 		}
 		std::cout << "Se han eliminado los datos repetidos correctamente \n";
 }
+bool listaSimple::eliminarTodos(int _dato)
+{
+	bool eliminado = false;
+	if (!esVacia()) {
+		nodoS* aux = getCab();
+		
+		while ((aux != NULL)) {
+			nodoS* temp = aux;
+			if (temp->getDato() == _dato) {
+				setCab(temp->getSgte());
+				temp = aux->getSgte();
+				setLargo(getLargo() - 1);
+				delete temp;
+				eliminado = true;
+			}
+			aux->setSgte(aux->getSgte());
+		}
+
+	}
+	return eliminado;
+}
+
+		
+
+
+	
+
+
+	
+
+
+
+	
