@@ -269,27 +269,6 @@ void listaSimple::eliminarRepetidos()
 		}
 		std::cout << "Se han eliminado los datos repetidos correctamente \n";
 }
-bool listaSimple::eliminarTodos(int _dato)
-{
-	bool eliminado = false;
-	if (!esVacia()) {
-		nodoS* aux = getCab();
-		
-		while ((aux != NULL)) {
-			nodoS* temp = aux;
-			if (temp->getDato() == _dato) {
-				setCab(temp->getSgte());
-				temp = aux->getSgte();
-				setLargo(getLargo() - 1);
-				delete temp;
-				eliminado = true;
-			}
-			aux->setSgte(aux->getSgte());
-		}
-
-	}
-	return eliminado;
-}
 
 		
 
