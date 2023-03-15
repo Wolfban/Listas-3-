@@ -71,7 +71,7 @@ void menu() {
         }
 
         case 5: {
-            cout << "Eliminado los nodos de la lista:" << endl;
+            cout << "Eliminado los nodos de la lista" << endl;
             lista->eliminarLista();
             break;
         }
