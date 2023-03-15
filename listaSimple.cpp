@@ -259,7 +259,6 @@ void listaSimple::eliminarRepetidos()
 		}
 		
 		std::cout << "Se han eliminado los datos repetidos correctamente \n"; 
-		desplegarLista();
 }
 bool listaSimple::eliminarTodos(int _dato)
 {
